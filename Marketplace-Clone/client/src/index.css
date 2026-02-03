@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: hsl(0 0% 96%); /* Light Gray Background #F3F3F3 */
+  --color-foreground: hsl(220 29% 10%); /* Very Dark Blue/Black text */
+
+  --color-primary: hsl(220 29% 19%); /* Amazon Dark Blue #232F3E */
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(218 28% 25%); /* Slightly lighter blue #2E3B4E */
+  --color-secondary-foreground: hsl(0 0% 100%);
+
+  --color-accent: hsl(38 99% 70%); /* Amazon Yellow/Orange #FEBD69 */
+  --color-accent-foreground: hsl(220 29% 10%);
+
+  --color-muted: hsl(210 20% 96%);
+  --color-muted-foreground: hsl(220 10% 40%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 29% 10%);
+
+  --color-border: hsl(220 13% 91%);
+  --color-input: hsl(220 13% 91%);
+  --color-ring: hsl(38 99% 70%); /* Focus ring is orange */
+
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-primary;
+  }
+}
+
+/* Custom Utility Classes for that "Retail" feel */
+@layer utilities {
+  .text-price {
+    @apply font-medium text-red-700;
+  }
+  .link-blue {
+    @apply text-[#007185] hover:text-[#C7511F] hover:underline cursor-pointer transition-colors;
+  }
+  .btn-primary {
+    @apply bg-accent hover:bg-[hsl(38,95%,60%)] text-accent-foreground font-medium rounded-md px-4 py-2 transition-colors shadow-sm active:translate-y-[1px];
+  }
+  .btn-secondary {
+    @apply bg-white border border-gray-300 hover:bg-gray-50 text-foreground font-medium rounded-md px-4 py-2 transition-colors shadow-sm active:translate-y-[1px];
+  }
+}
